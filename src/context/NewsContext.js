@@ -24,8 +24,6 @@ export const NewsProvider = ({ children }) => {
       }${apiKeyParams}`;
       const data = await fetch(endPoint);
       const newsData = await data.json();
-      console.log(">> caetgor: ", category);
-      console.log(">> data: ", newsData);
       setTopHeadlines(newsData);
     } catch (err) {
       setError(err);
