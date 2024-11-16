@@ -1,0 +1,68 @@
+// Variables for colors and spacing
+$text-color: #f0f0f0;
+$bg-color: #333;
+$hover-color: #6b6868;
+$border-color: #ffffff;
+
+.sideNav {
+  position: absolute;
+  top: 0px;
+  left: -300px;
+  background-color: $bg-color;
+  padding: 20px;
+  height: 100vh;
+  width: 250px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.5s ease-in-out;
+  z-index: 999;
+
+  &.open {
+    left: 0;
+  }
+  &.close {
+    left: -300px;
+  }
+
+  .close-nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+
+    .title {
+      font-size: 26px;
+      font-weight: bold;
+      color: $text-color;
+      margin-left: 4px;
+    }
+  }
+}
+
+.sideNavList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  top: 14px;
+  position: relative;
+}
+
+.sideNavItem {
+  padding: 15px 10px;
+  border-bottom: 1px solid $border-color;
+  font-size: 18px;
+  color: $text-color;
+  cursor: pointer;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  @media (max-width: 768px) {
+    display: inline-block;
+    padding: 10px 15px;
+  }
+}
